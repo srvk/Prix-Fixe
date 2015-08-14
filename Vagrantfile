@@ -91,7 +91,8 @@ DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -
 usermod -a -G audio vagrant                                                                                                           
 
 # Turn off password protected lock screen                                                                                             
-gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend 'false'                                                            
+gsettings set org.gnome.desktop.session idle-delay 0                                                                                  
+gsettings set org.gnome.desktop.screensaver lock-enabled 'false'                                                            
 
 # fix: volume is sometimes zeroed at startup                                                                                          
 amixer set 'Master' 100% on                                                                                                           
